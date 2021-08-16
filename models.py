@@ -1,6 +1,7 @@
-#from flask import Flask
+
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_login import UserMixin
 
 db = SQLAlchemy()
 
@@ -8,7 +9,7 @@ db = SQLAlchemy()
 #app.config['SQLALCHEMY_DATABASE_URI'] = "Wira_db://tito:208251001@localhost:5432/register"
 db = SQLAlchemy()
 #migrate = Migrate(app,db)
-class User_model(db.Model):
+class User_model(db.Model,UserMixin):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(30),unique=True, nullable=False)
