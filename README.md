@@ -1,2 +1,2 @@
 # LoginAuth
-# Simple user authorization app made using flask
+Simple user authorization app made using flask
